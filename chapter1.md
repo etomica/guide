@@ -2,6 +2,10 @@
 
 GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
 
+You can do Math!  $\ln\left\(1+\frac{x}{1+x}\right\)$
+
+
+
 ```java
 import etomica.*
 
@@ -19,12 +23,12 @@ real y = Math.sin(x);
 MeterMappedAveraging AEEMeter = null;
 AccumulatorAverageCovariance AEEAccumulator = null;
 if(aEE){
-	AEEMeter = new MeterMappedAveraging(sim.space, sim.box, sim,temperature,interactionS,dipoleMagnitude,sim.potentialMaster);
-	AEEAccumulator = new AccumulatorAverageCovariance(samplePerBlock,true);
-	DataPump AEEPump = new DataPump(AEEMeter,AEEAccumulator);
-	IntegratorListenerAction AEEListener = new IntegratorListenerAction(AEEPump);
-	AEEListener.setInterval(sampleAtInterval);
-	sim.integrator.getEventManager().addListener(AEEListener);
+    AEEMeter = new MeterMappedAveraging(sim.space, sim.box, sim,temperature,interactionS,dipoleMagnitude,sim.potentialMaster);
+    AEEAccumulator = new AccumulatorAverageCovariance(samplePerBlock,true);
+    DataPump AEEPump = new DataPump(AEEMeter,AEEAccumulator);
+    IntegratorListenerAction AEEListener = new IntegratorListenerAction(AEEPump);
+    AEEListener.setInterval(sampleAtInterval);
+    sim.integrator.getEventManager().addListener(AEEListener);
 }
 ```
 
